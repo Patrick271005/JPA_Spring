@@ -30,5 +30,11 @@ public class PersonService {
                 //.orElseThrow(() -> new IllegalArgumentException("Person not found"));
 
     }
+
+
+    public void deleteByEmployeeID(String id) {
+        repo.deleteById(Long.valueOf(id));
+    }
+
 }
 
