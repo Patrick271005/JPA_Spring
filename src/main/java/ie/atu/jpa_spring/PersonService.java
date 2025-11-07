@@ -2,6 +2,8 @@ package ie.atu.jpa_spring;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonService {
     private final PersonRepository repo;
@@ -14,5 +16,12 @@ public class PersonService {
 
         return repo.save(p);
     }
+
+    public Person findByEmployeeId(String id) {
+        return repo.findByEmployeeId(id)
+                .orElseThrow(() -> new IllegalArgumentException("Person not found"));
+    }
+
+    public List<Person> findAll() { return repo.findAll(); }
 }
 
