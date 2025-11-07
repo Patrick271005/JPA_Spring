@@ -35,4 +35,13 @@ public class PersonController {
 
 
     }
+    /*@DeleteMapping("/api/persons/{id}")
+    public Person delete(@PathVariable String id) {
+        return service.deleteByEmployeeID(id);
+    }*/
+
+    @DeleteMapping("/api/persons/{id}")
+    public void delete(@PathVariable String id) {
+        service.deleteByEmployeeID(id);
+    }
 }
