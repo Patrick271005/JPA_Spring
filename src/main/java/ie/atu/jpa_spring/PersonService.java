@@ -23,5 +23,12 @@ public class PersonService {
     }
 
     public List<Person> findAll() { return repo.findAll(); }
+
+    public Person updateByEmployeeID(String id, Person p) {
+         repo.findByEmployeeId(p.getEmployeeId());
+                return repo.save(p);
+                //.orElseThrow(() -> new IllegalArgumentException("Person not found"));
+
+    }
 }
 
